@@ -1,0 +1,102 @@
+module STAGE_ID(
+	//CLOCK
+	Clock_in,
+	//PC
+	PC_NEXT_INS_IN,
+	PC_NEXT_INS_OUT,
+	//MEMORIA DE INSTRUCAO
+	MEM_INS_OUT,
+	//BANCO DE REGISTRADORES
+	CS_B_R_Signal_write,
+	CS_B_R_Signal_read,
+	CS_B_R_Signal_reset,
+	B_R_Data_to_write_IN,
+	B_R_Out_1, 
+	B_R_Out_2,
+	//EXTENSOR DE SINAL
+	EXTENSOR_DE_SINAL_OUT,
+	//ENTRADAS PARA UNIDADE DE CONTROLE
+	INSTRUC_OPCODE,
+	//ENTRADA PARA SELECAO DA ULA
+	INSTRUC_R_OPULA,
+	//ENTRADA PARA O TESTADOR DE SALTO
+	INSTRUC_BRANCH_COND,
+	//ENTRADA PARA O TESTADOR DE SALTO
+	INSTRUC_BRANCH_OP
+	);
+
+input wire Clock_in;	
+
+//INSTRUÇÃO
+	//OPCODE
+	output wire [2:0] INSTRUC_OPCODE;
+	//OPERANDOS
+	wire [3:0] INSTRUC_R_WC, INSTRUC_R_RA, INSTRUC_R_RB;
+	//OPCODE ULA
+	output wire [4:0] INSTRUC_R_OPULA;
+	//TIPO DE OPERACAO COM CONSTANTE
+	wire [1:0] INSTRUC_CONST_OPES;
+	//CONDICAO DE SALTO(TRUE/FALSE)
+	output wire INSTRUC_BRANCH_OP;
+	//CONDICAO A SER VERIFICADA PARA SALTO(POSITIVO/NEGATIVO/CARRY/...)
+	output wire [3:0] INSTRUC_BRANCH_COND;
+	//TIPO DE DESVIO POR REGISTRADOR
+	wire INSTRUC_BRANCH_REGISTER_OPD;
+
+//PC
+input wire [31:0] PC_NEXT_INS_IN;
+output wire [31:0] PC_NEXT_INS_OUT;
+
+//MEMORIA DE INSTRUCAO
+input wire [31:0] MEM_INS_OUT;
+
+//EXTENSOR DE SINAL
+wire [15:0] EXTENSOR_DE_SINAL_IN;
+output wire [31:0] EXTENSOR_DE_SINAL_OUT;
+
+//BANCO DE REGISTRADORES
+input wire [31:0] B_R_Data_to_write_IN;
+wire [31:0] B_R_Data_to_write;
+wire [3:0] B_R_Read_1, B_R_Read_2, B_R_Address_to_write;
+input wire CS_B_R_Signal_write, CS_B_R_Signal_read, CS_B_R_Signal_reset;
+output wire [31:0] B_R_Out_1, B_R_Out_2;
+
+
+
+//PEGANDO AS PARTES DA PALAVRA
+assign INSTRUC_OPCODE = MEM_INS_OUT[31:29];
+assign INSTRUC_R_WC = MEM_INS_OUT[23:20];
+assign INSTRUC_R_RA = MEM_INS_OUT[19:16];
+assign INSTRUC_R_RB = MEM_INS_OUT[15:12];
+assign INSTRUC_R_OPULA = MEM_INS_OUT[28:24];
+assign INSTRUC_CONST_OPES = MEM_INS_OUT[25:24];
+assign INSTRUC_BRANCH_OP = MEM_INS_OUT[24];
+assign INSTRUC_BRANCH_COND = MEM_INS_OUT[23:20];
+assign INSTRUC_BRANCH_REGISTER_OPD = MEM_INS_OUT[24] ;
+
+//PC
+assign PC_NEXT_INS_OUT = PC_NEXT_INS_IN;
+
+//EXTENSOR DE SINAL
+assign EXTENSOR_DE_SINAL_IN = MEM_INS_OUT[15:0];
+
+//BANCO DE REGISTRADORES
+assign B_R_Data_to_write = B_R_Data_to_write_IN;
+assign B_R_Read_1 = INSTRUC_R_RA;
+assign B_R_Read_2 = INSTRUC_R_RB;
+assign B_R_Address_to_write = INSTRUC_R_WC;
+
+
+//Instância do EXTENSOR DE SINAL
+extensor_de_sinal EXTENSOR_DE_SINAL (EXTENSOR_DE_SINAL_IN, EXTENSOR_DE_SINAL_OUT);
+
+//Instância do BANCO_DE_REGISTRADORES
+banco_de_registradores BANCO_DE_REGISTRADORES( B_R_Read_1, B_R_Read_2, B_R_Data_to_write,
+			B_R_Address_to_write, CS_B_R_Signal_write, CS_B_R_Signal_read,	CS_B_R_Signal_reset,
+			Clock_in,	B_R_Out_1, B_R_Out_2);
+
+			
+			
+
+
+endmodule

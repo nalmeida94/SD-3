@@ -1,0 +1,2105 @@
+Analysis & Synthesis report for banco_de_registradores
+Sat Mar 19 12:07:48 2016
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. User-Specified and Inferred Latches
+  9. General Register Statistics
+ 10. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 11. Elapsed Time Per Partition
+ 12. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                         ;
++------------------------------------+-------------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Sat Mar 19 12:07:48 2016           ;
+; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
+; Revision Name                      ; banco_de_registradores                          ;
+; Top-level Entity Name              ; banco_de_registradores                          ;
+; Family                             ; Cyclone IV GX                                   ;
+; Total logic elements               ; 1,370                                           ;
+;     Total combinational functions  ; 1,370                                           ;
+;     Dedicated logic registers      ; 0                                               ;
+; Total registers                    ; 0                                               ;
+; Total pins                         ; 112                                             ;
+; Total virtual pins                 ; 0                                               ;
+; Total memory bits                  ; 0                                               ;
+; Embedded Multiplier 9-bit elements ; 0                                               ;
+; Total GXB Receiver Channel PCS     ; 0                                               ;
+; Total GXB Receiver Channel PMA     ; 0                                               ;
+; Total GXB Transmitter Channel PCS  ; 0                                               ;
+; Total GXB Transmitter Channel PMA  ; 0                                               ;
+; Total PLLs                         ; 0                                               ;
++------------------------------------+-------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                                ;
++----------------------------------------------------------------------------+------------------------+------------------------+
+; Option                                                                     ; Setting                ; Default Value          ;
++----------------------------------------------------------------------------+------------------------+------------------------+
+; Top-level entity name                                                      ; banco_de_registradores ; banco_de_registradores ;
+; Family name                                                                ; Cyclone IV GX          ; Cyclone IV GX          ;
+; Use smart compilation                                                      ; Off                    ; Off                    ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                     ; On                     ;
+; Enable compact report table                                                ; Off                    ; Off                    ;
+; Restructure Multiplexers                                                   ; Auto                   ; Auto                   ;
+; Create Debugging Nodes for IP Cores                                        ; Off                    ; Off                    ;
+; Preserve fewer node names                                                  ; On                     ; On                     ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                    ; Off                    ;
+; Verilog Version                                                            ; Verilog_2001           ; Verilog_2001           ;
+; VHDL Version                                                               ; VHDL_1993              ; VHDL_1993              ;
+; State Machine Processing                                                   ; Auto                   ; Auto                   ;
+; Safe State Machine                                                         ; Off                    ; Off                    ;
+; Extract Verilog State Machines                                             ; On                     ; On                     ;
+; Extract VHDL State Machines                                                ; On                     ; On                     ;
+; Ignore Verilog initial constructs                                          ; Off                    ; Off                    ;
+; Iteration limit for constant Verilog loops                                 ; 5000                   ; 5000                   ;
+; Iteration limit for non-constant Verilog loops                             ; 250                    ; 250                    ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                     ; On                     ;
+; Infer RAMs from Raw Logic                                                  ; On                     ; On                     ;
+; Parallel Synthesis                                                         ; On                     ; On                     ;
+; DSP Block Balancing                                                        ; Auto                   ; Auto                   ;
+; NOT Gate Push-Back                                                         ; On                     ; On                     ;
+; Power-Up Don't Care                                                        ; On                     ; On                     ;
+; Remove Redundant Logic Cells                                               ; Off                    ; Off                    ;
+; Remove Duplicate Registers                                                 ; On                     ; On                     ;
+; Ignore CARRY Buffers                                                       ; Off                    ; Off                    ;
+; Ignore CASCADE Buffers                                                     ; Off                    ; Off                    ;
+; Ignore GLOBAL Buffers                                                      ; Off                    ; Off                    ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                    ; Off                    ;
+; Ignore LCELL Buffers                                                       ; Off                    ; Off                    ;
+; Ignore SOFT Buffers                                                        ; On                     ; On                     ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                    ; Off                    ;
+; Optimization Technique                                                     ; Balanced               ; Balanced               ;
+; Carry Chain Length                                                         ; 70                     ; 70                     ;
+; Auto Carry Chains                                                          ; On                     ; On                     ;
+; Auto Open-Drain Pins                                                       ; On                     ; On                     ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                    ; Off                    ;
+; Auto ROM Replacement                                                       ; On                     ; On                     ;
+; Auto RAM Replacement                                                       ; On                     ; On                     ;
+; Auto DSP Block Replacement                                                 ; On                     ; On                     ;
+; Auto Shift Register Replacement                                            ; Auto                   ; Auto                   ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto                   ; Auto                   ;
+; Auto Clock Enable Replacement                                              ; On                     ; On                     ;
+; Strict RAM Replacement                                                     ; Off                    ; Off                    ;
+; Allow Synchronous Control Signals                                          ; On                     ; On                     ;
+; Force Use of Synchronous Clear Signals                                     ; Off                    ; Off                    ;
+; Auto RAM Block Balancing                                                   ; On                     ; On                     ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                    ; Off                    ;
+; Auto Resource Sharing                                                      ; Off                    ; Off                    ;
+; Allow Any RAM Size For Recognition                                         ; Off                    ; Off                    ;
+; Allow Any ROM Size For Recognition                                         ; Off                    ; Off                    ;
+; Allow Any Shift Register Size For Recognition                              ; Off                    ; Off                    ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                     ; On                     ;
+; Ignore translate_off and synthesis_off directives                          ; Off                    ; Off                    ;
+; Timing-Driven Synthesis                                                    ; On                     ; On                     ;
+; Report Parameter Settings                                                  ; On                     ; On                     ;
+; Report Source Assignments                                                  ; On                     ; On                     ;
+; Report Connectivity Checks                                                 ; On                     ; On                     ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                    ; Off                    ;
+; Synchronization Register Chain Length                                      ; 2                      ; 2                      ;
+; PowerPlay Power Optimization                                               ; Normal compilation     ; Normal compilation     ;
+; HDL message level                                                          ; Level2                 ; Level2                 ;
+; Suppress Register Optimization Related Messages                            ; Off                    ; Off                    ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000                   ; 5000                   ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000                   ; 5000                   ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                    ; 100                    ;
+; Clock MUX Protection                                                       ; On                     ; On                     ;
+; Auto Gated Clock Conversion                                                ; Off                    ; Off                    ;
+; Block Design Naming                                                        ; Auto                   ; Auto                   ;
+; SDC constraint protection                                                  ; Off                    ; Off                    ;
+; Synthesis Effort                                                           ; Auto                   ; Auto                   ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                     ; On                     ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                    ; Off                    ;
+; Analysis & Synthesis Message Level                                         ; Medium                 ; Medium                 ;
+; Disable Register Merging Across Hierarchies                                ; Auto                   ; Auto                   ;
+; Resource Aware Inference For Block RAM                                     ; On                     ; On                     ;
+; Synthesis Seed                                                             ; 1                      ; 1                      ;
++----------------------------------------------------------------------------+------------------------+------------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 4      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                           ;
++----------------------------------+-----------------+------------------------+------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                                             ; Library ;
++----------------------------------+-----------------+------------------------+------------------------------------------------------------------------------------------+---------+
+; banco_de_registradores.v         ; yes             ; User Verilog HDL File  ; D:/Workspaces/Github/PBL-SD-2/Components/banco_de_registradores/banco_de_registradores.v ;         ;
++----------------------------------+-----------------+------------------------+------------------------------------------------------------------------------------------+---------+
+
+
++---------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary ;
++--------------------------+------------------+
+; Resource                 ; Usage            ;
++--------------------------+------------------+
+; I/O pins                 ; 112              ;
+; DSP block 9-bit elements ; 0                ;
+; Maximum fan-out node     ; Read_1[1]~input  ;
+; Maximum fan-out          ; 133              ;
+; Total fan-out            ; 4878             ;
+; Average fan-out          ; 3.06             ;
++--------------------------+------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                         ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+-----------+------+--------------+-------------------------+--------------+
+; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; DSP 36x36 ; Pins ; Virtual Pins ; Full Hierarchy Name     ; Library Name ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+-----------+------+--------------+-------------------------+--------------+
+; |banco_de_registradores    ; 1370 (1370)       ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 112  ; 0            ; |banco_de_registradores ; work         ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+-----------+------+--------------+-------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++-----------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                 ;
++------------------------------------------------------+---------------------+------------------------+
+; Latch Name                                           ; Latch Enable Signal ; Free of Timing Hazards ;
++------------------------------------------------------+---------------------+------------------------+
+; Out_1[0]$latch                                       ; Out_1[31]           ; yes                    ;
+; Out_1[1]$latch                                       ; Out_1[31]           ; yes                    ;
+; Out_1[2]$latch                                       ; Out_1[31]           ; yes                    ;
+; Out_1[3]$latch                                       ; Out_1[31]           ; yes                    ;
+; Out_1[4]$latch                                       ; Out_1[31]           ; yes                    ;
+; Out_1[5]$latch                                       ; Out_1[31]           ; yes                    ;
+; Out_1[6]$latch                                       ; Out_1[31]           ; yes                    ;
+; Out_1[7]$latch                                       ; Out_1[31]           ; yes                    ;
+; Out_1[8]$latch                                       ; Out_1[31]           ; yes                    ;
+; Out_1[9]$latch                                       ; Out_1[31]           ; yes                    ;
+; Out_1[10]$latch                                      ; Out_1[31]           ; yes                    ;
+; Out_1[11]$latch                                      ; Out_1[31]           ; yes                    ;
+; Out_1[12]$latch                                      ; Out_1[31]           ; yes                    ;
+; Out_1[13]$latch                                      ; Out_1[31]           ; yes                    ;
+; Out_1[14]$latch                                      ; Out_1[31]           ; yes                    ;
+; Out_1[15]$latch                                      ; Out_1[31]           ; yes                    ;
+; Out_1[16]$latch                                      ; Out_1[31]           ; yes                    ;
+; Out_1[17]$latch                                      ; Out_1[31]           ; yes                    ;
+; Out_1[18]$latch                                      ; Out_1[31]           ; yes                    ;
+; Out_1[19]$latch                                      ; Out_1[31]           ; yes                    ;
+; Out_1[20]$latch                                      ; Out_1[31]           ; yes                    ;
+; Out_1[21]$latch                                      ; Out_1[31]           ; yes                    ;
+; Out_1[22]$latch                                      ; Out_1[31]           ; yes                    ;
+; Out_1[23]$latch                                      ; Out_1[31]           ; yes                    ;
+; Out_1[24]$latch                                      ; Out_1[31]           ; yes                    ;
+; Out_1[25]$latch                                      ; Out_1[31]           ; yes                    ;
+; Out_1[26]$latch                                      ; Out_1[31]           ; yes                    ;
+; Out_1[27]$latch                                      ; Out_1[31]           ; yes                    ;
+; Out_1[28]$latch                                      ; Out_1[31]           ; yes                    ;
+; Out_1[29]$latch                                      ; Out_1[31]           ; yes                    ;
+; Out_1[30]$latch                                      ; Out_1[31]           ; yes                    ;
+; Out_1[31]$latch                                      ; Out_1[31]           ; yes                    ;
+; Out_2[0]$latch                                       ; Out_1[31]           ; yes                    ;
+; Out_2[1]$latch                                       ; Out_1[31]           ; yes                    ;
+; Out_2[2]$latch                                       ; Out_1[31]           ; yes                    ;
+; Out_2[3]$latch                                       ; Out_1[31]           ; yes                    ;
+; Out_2[4]$latch                                       ; Out_1[31]           ; yes                    ;
+; Out_2[5]$latch                                       ; Out_1[31]           ; yes                    ;
+; Out_2[6]$latch                                       ; Out_1[31]           ; yes                    ;
+; Out_2[7]$latch                                       ; Out_1[31]           ; yes                    ;
+; Out_2[8]$latch                                       ; Out_1[31]           ; yes                    ;
+; Out_2[9]$latch                                       ; Out_1[31]           ; yes                    ;
+; Out_2[10]$latch                                      ; Out_1[31]           ; yes                    ;
+; Out_2[11]$latch                                      ; Out_1[31]           ; yes                    ;
+; Out_2[12]$latch                                      ; Out_1[31]           ; yes                    ;
+; Out_2[13]$latch                                      ; Out_1[31]           ; yes                    ;
+; Out_2[14]$latch                                      ; Out_1[31]           ; yes                    ;
+; Out_2[15]$latch                                      ; Out_1[31]           ; yes                    ;
+; Out_2[16]$latch                                      ; Out_1[31]           ; yes                    ;
+; Out_2[17]$latch                                      ; Out_1[31]           ; yes                    ;
+; Out_2[18]$latch                                      ; Out_1[31]           ; yes                    ;
+; Out_2[19]$latch                                      ; Out_1[31]           ; yes                    ;
+; Out_2[20]$latch                                      ; Out_1[31]           ; yes                    ;
+; Out_2[21]$latch                                      ; Out_1[31]           ; yes                    ;
+; Out_2[22]$latch                                      ; Out_1[31]           ; yes                    ;
+; Out_2[23]$latch                                      ; Out_1[31]           ; yes                    ;
+; Out_2[24]$latch                                      ; Out_1[31]           ; yes                    ;
+; Out_2[25]$latch                                      ; Out_1[31]           ; yes                    ;
+; Out_2[26]$latch                                      ; Out_1[31]           ; yes                    ;
+; Out_2[27]$latch                                      ; Out_1[31]           ; yes                    ;
+; Out_2[28]$latch                                      ; Out_1[31]           ; yes                    ;
+; Out_2[29]$latch                                      ; Out_1[31]           ; yes                    ;
+; Out_2[30]$latch                                      ; Out_1[31]           ; yes                    ;
+; Out_2[31]$latch                                      ; Out_1[31]           ; yes                    ;
+; Data[10][0]                                          ; Data[10][0]         ; yes                    ;
+; Data[9][0]                                           ; Data[9][0]          ; yes                    ;
+; Data[8][0]                                           ; Data[8][0]          ; yes                    ;
+; Data[11][0]                                          ; Data[11][0]         ; yes                    ;
+; Data[5][0]                                           ; Data[5][0]          ; yes                    ;
+; Data[6][0]                                           ; Data[6][0]          ; yes                    ;
+; Data[4][0]                                           ; Data[4][0]          ; yes                    ;
+; Data[7][0]                                           ; Data[7][0]          ; yes                    ;
+; Data[2][0]                                           ; Data[2][0]          ; yes                    ;
+; Data[1][0]                                           ; Data[1][0]          ; yes                    ;
+; Data[0][0]                                           ; Data[0][0]          ; yes                    ;
+; Data[3][0]                                           ; Data[3][0]          ; yes                    ;
+; Data[13][0]                                          ; Data[13][0]         ; yes                    ;
+; Data[14][0]                                          ; Data[14][0]         ; yes                    ;
+; Data[12][0]                                          ; Data[12][0]         ; yes                    ;
+; Data[15][0]                                          ; Data[15][0]         ; yes                    ;
+; Data[6][1]                                           ; Data[6][0]          ; yes                    ;
+; Data[10][1]                                          ; Data[10][0]         ; yes                    ;
+; Data[2][1]                                           ; Data[2][0]          ; yes                    ;
+; Data[14][1]                                          ; Data[14][0]         ; yes                    ;
+; Data[9][1]                                           ; Data[9][0]          ; yes                    ;
+; Data[5][1]                                           ; Data[5][0]          ; yes                    ;
+; Data[1][1]                                           ; Data[1][0]          ; yes                    ;
+; Data[13][1]                                          ; Data[13][0]         ; yes                    ;
+; Data[4][1]                                           ; Data[4][0]          ; yes                    ;
+; Data[8][1]                                           ; Data[8][0]          ; yes                    ;
+; Data[0][1]                                           ; Data[0][0]          ; yes                    ;
+; Data[12][1]                                          ; Data[12][0]         ; yes                    ;
+; Data[11][1]                                          ; Data[11][0]         ; yes                    ;
+; Data[7][1]                                           ; Data[7][0]          ; yes                    ;
+; Data[3][1]                                           ; Data[3][0]          ; yes                    ;
+; Data[15][1]                                          ; Data[15][0]         ; yes                    ;
+; Data[6][2]                                           ; Data[6][0]          ; yes                    ;
+; Data[5][2]                                           ; Data[5][0]          ; yes                    ;
+; Data[4][2]                                           ; Data[4][0]          ; yes                    ;
+; Data[7][2]                                           ; Data[7][0]          ; yes                    ;
+; Number of user-specified and inferred latches = 576  ;                     ;                        ;
++------------------------------------------------------+---------------------+------------------------+
+Table restricted to first 100 entries. Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 0     ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output        ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------+
+; 17:1               ; 32 bits   ; 352 LEs       ; 352 LEs              ; 0 LEs                  ; No         ; |banco_de_registradores|Out_1[17] ;
+; 17:1               ; 32 bits   ; 352 LEs       ; 352 LEs              ; 0 LEs                  ; No         ; |banco_de_registradores|Out_2[14] ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:14     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Analysis & Synthesis
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Sat Mar 19 12:07:23 2016
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off banco_de_registradores -c banco_de_registradores
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (12021): Found 1 design units, including 1 entities, in source file banco_de_registradores.v
+    Info (12023): Found entity 1: banco_de_registradores
+Info (12127): Elaborating entity "banco_de_registradores" for the top level hierarchy
+Warning (10235): Verilog HDL Always Construct warning at banco_de_registradores.v(30): variable "Signal_reset" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at banco_de_registradores.v(44): variable "Signal_write" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at banco_de_registradores.v(45): variable "Data_to_write" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at banco_de_registradores.v(45): variable "Address_to_write" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at banco_de_registradores.v(50): variable "Signal_read" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at banco_de_registradores.v(53): variable "Read_1" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10027): Verilog HDL or VHDL warning at the banco_de_registradores.v(53): index expression is not wide enough to address all of the elements in the array
+Warning (10235): Verilog HDL Always Construct warning at banco_de_registradores.v(54): variable "Read_2" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10027): Verilog HDL or VHDL warning at the banco_de_registradores.v(54): index expression is not wide enough to address all of the elements in the array
+Warning (10240): Verilog HDL Always Construct warning at banco_de_registradores.v(26): inferring latch(es) for variable "Out_1", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at banco_de_registradores.v(26): inferring latch(es) for variable "Out_2", which holds its previous value in one or more paths through the always construct
+Info (10041): Inferred latch for "Out_2[0]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Out_2[1]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Out_2[2]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Out_2[3]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Out_2[4]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Out_2[5]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Out_2[6]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Out_2[7]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Out_2[8]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Out_2[9]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Out_2[10]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Out_2[11]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Out_2[12]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Out_2[13]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Out_2[14]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Out_2[15]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Out_2[16]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Out_2[17]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Out_2[18]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Out_2[19]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Out_2[20]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Out_2[21]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Out_2[22]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Out_2[23]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Out_2[24]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Out_2[25]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Out_2[26]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Out_2[27]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Out_2[28]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Out_2[29]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Out_2[30]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Out_2[31]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Out_1[0]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Out_1[1]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Out_1[2]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Out_1[3]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Out_1[4]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Out_1[5]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Out_1[6]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Out_1[7]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Out_1[8]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Out_1[9]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Out_1[10]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Out_1[11]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Out_1[12]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Out_1[13]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Out_1[14]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Out_1[15]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Out_1[16]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Out_1[17]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Out_1[18]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Out_1[19]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Out_1[20]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Out_1[21]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Out_1[22]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Out_1[23]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Out_1[24]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Out_1[25]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Out_1[26]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Out_1[27]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Out_1[28]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Out_1[29]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Out_1[30]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Out_1[31]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[15][0]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[15][1]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[15][2]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[15][3]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[15][4]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[15][5]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[15][6]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[15][7]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[15][8]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[15][9]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[15][10]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[15][11]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[15][12]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[15][13]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[15][14]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[15][15]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[15][16]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[15][17]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[15][18]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[15][19]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[15][20]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[15][21]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[15][22]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[15][23]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[15][24]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[15][25]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[15][26]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[15][27]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[15][28]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[15][29]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[15][30]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[15][31]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[14][0]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[14][1]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[14][2]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[14][3]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[14][4]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[14][5]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[14][6]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[14][7]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[14][8]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[14][9]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[14][10]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[14][11]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[14][12]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[14][13]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[14][14]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[14][15]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[14][16]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[14][17]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[14][18]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[14][19]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[14][20]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[14][21]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[14][22]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[14][23]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[14][24]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[14][25]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[14][26]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[14][27]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[14][28]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[14][29]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[14][30]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[14][31]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[13][0]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[13][1]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[13][2]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[13][3]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[13][4]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[13][5]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[13][6]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[13][7]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[13][8]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[13][9]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[13][10]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[13][11]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[13][12]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[13][13]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[13][14]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[13][15]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[13][16]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[13][17]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[13][18]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[13][19]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[13][20]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[13][21]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[13][22]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[13][23]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[13][24]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[13][25]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[13][26]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[13][27]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[13][28]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[13][29]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[13][30]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[13][31]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[12][0]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[12][1]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[12][2]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[12][3]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[12][4]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[12][5]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[12][6]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[12][7]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[12][8]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[12][9]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[12][10]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[12][11]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[12][12]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[12][13]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[12][14]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[12][15]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[12][16]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[12][17]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[12][18]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[12][19]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[12][20]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[12][21]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[12][22]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[12][23]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[12][24]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[12][25]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[12][26]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[12][27]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[12][28]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[12][29]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[12][30]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[12][31]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[11][0]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[11][1]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[11][2]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[11][3]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[11][4]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[11][5]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[11][6]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[11][7]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[11][8]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[11][9]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[11][10]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[11][11]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[11][12]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[11][13]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[11][14]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[11][15]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[11][16]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[11][17]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[11][18]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[11][19]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[11][20]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[11][21]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[11][22]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[11][23]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[11][24]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[11][25]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[11][26]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[11][27]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[11][28]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[11][29]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[11][30]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[11][31]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[10][0]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[10][1]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[10][2]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[10][3]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[10][4]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[10][5]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[10][6]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[10][7]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[10][8]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[10][9]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[10][10]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[10][11]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[10][12]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[10][13]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[10][14]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[10][15]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[10][16]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[10][17]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[10][18]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[10][19]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[10][20]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[10][21]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[10][22]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[10][23]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[10][24]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[10][25]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[10][26]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[10][27]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[10][28]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[10][29]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[10][30]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[10][31]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[9][0]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[9][1]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[9][2]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[9][3]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[9][4]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[9][5]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[9][6]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[9][7]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[9][8]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[9][9]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[9][10]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[9][11]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[9][12]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[9][13]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[9][14]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[9][15]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[9][16]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[9][17]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[9][18]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[9][19]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[9][20]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[9][21]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[9][22]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[9][23]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[9][24]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[9][25]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[9][26]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[9][27]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[9][28]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[9][29]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[9][30]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[9][31]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[8][0]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[8][1]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[8][2]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[8][3]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[8][4]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[8][5]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[8][6]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[8][7]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[8][8]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[8][9]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[8][10]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[8][11]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[8][12]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[8][13]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[8][14]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[8][15]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[8][16]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[8][17]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[8][18]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[8][19]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[8][20]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[8][21]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[8][22]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[8][23]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[8][24]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[8][25]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[8][26]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[8][27]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[8][28]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[8][29]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[8][30]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[8][31]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[7][0]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[7][1]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[7][2]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[7][3]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[7][4]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[7][5]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[7][6]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[7][7]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[7][8]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[7][9]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[7][10]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[7][11]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[7][12]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[7][13]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[7][14]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[7][15]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[7][16]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[7][17]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[7][18]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[7][19]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[7][20]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[7][21]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[7][22]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[7][23]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[7][24]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[7][25]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[7][26]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[7][27]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[7][28]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[7][29]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[7][30]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[7][31]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[6][0]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[6][1]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[6][2]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[6][3]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[6][4]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[6][5]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[6][6]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[6][7]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[6][8]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[6][9]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[6][10]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[6][11]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[6][12]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[6][13]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[6][14]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[6][15]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[6][16]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[6][17]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[6][18]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[6][19]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[6][20]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[6][21]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[6][22]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[6][23]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[6][24]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[6][25]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[6][26]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[6][27]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[6][28]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[6][29]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[6][30]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[6][31]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[5][0]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[5][1]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[5][2]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[5][3]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[5][4]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[5][5]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[5][6]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[5][7]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[5][8]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[5][9]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[5][10]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[5][11]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[5][12]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[5][13]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[5][14]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[5][15]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[5][16]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[5][17]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[5][18]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[5][19]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[5][20]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[5][21]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[5][22]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[5][23]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[5][24]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[5][25]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[5][26]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[5][27]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[5][28]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[5][29]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[5][30]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[5][31]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[4][0]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[4][1]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[4][2]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[4][3]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[4][4]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[4][5]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[4][6]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[4][7]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[4][8]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[4][9]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[4][10]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[4][11]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[4][12]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[4][13]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[4][14]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[4][15]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[4][16]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[4][17]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[4][18]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[4][19]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[4][20]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[4][21]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[4][22]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[4][23]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[4][24]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[4][25]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[4][26]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[4][27]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[4][28]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[4][29]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[4][30]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[4][31]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[3][0]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[3][1]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[3][2]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[3][3]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[3][4]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[3][5]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[3][6]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[3][7]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[3][8]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[3][9]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[3][10]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[3][11]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[3][12]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[3][13]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[3][14]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[3][15]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[3][16]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[3][17]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[3][18]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[3][19]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[3][20]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[3][21]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[3][22]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[3][23]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[3][24]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[3][25]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[3][26]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[3][27]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[3][28]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[3][29]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[3][30]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[3][31]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[2][0]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[2][1]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[2][2]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[2][3]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[2][4]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[2][5]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[2][6]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[2][7]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[2][8]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[2][9]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[2][10]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[2][11]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[2][12]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[2][13]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[2][14]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[2][15]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[2][16]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[2][17]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[2][18]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[2][19]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[2][20]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[2][21]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[2][22]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[2][23]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[2][24]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[2][25]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[2][26]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[2][27]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[2][28]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[2][29]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[2][30]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[2][31]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[1][0]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[1][1]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[1][2]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[1][3]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[1][4]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[1][5]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[1][6]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[1][7]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[1][8]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[1][9]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[1][10]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[1][11]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[1][12]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[1][13]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[1][14]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[1][15]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[1][16]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[1][17]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[1][18]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[1][19]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[1][20]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[1][21]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[1][22]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[1][23]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[1][24]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[1][25]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[1][26]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[1][27]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[1][28]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[1][29]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[1][30]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[1][31]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[0][0]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[0][1]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[0][2]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[0][3]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[0][4]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[0][5]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[0][6]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[0][7]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[0][8]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[0][9]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[0][10]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[0][11]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[0][12]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[0][13]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[0][14]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[0][15]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[0][16]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[0][17]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[0][18]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[0][19]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[0][20]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[0][21]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[0][22]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[0][23]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[0][24]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[0][25]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[0][26]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[0][27]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[0][28]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[0][29]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[0][30]" at banco_de_registradores.v(26)
+Info (10041): Inferred latch for "Data[0][31]" at banco_de_registradores.v(26)
+Warning (13012): Latch Out_1[0]$latch has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Clock_in
+Warning (13012): Latch Out_1[1]$latch has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Clock_in
+Warning (13012): Latch Out_1[2]$latch has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Clock_in
+Warning (13012): Latch Out_1[3]$latch has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Clock_in
+Warning (13012): Latch Out_1[4]$latch has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Clock_in
+Warning (13012): Latch Out_1[5]$latch has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Clock_in
+Warning (13012): Latch Out_1[6]$latch has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Clock_in
+Warning (13012): Latch Out_1[7]$latch has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Clock_in
+Warning (13012): Latch Out_1[8]$latch has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Clock_in
+Warning (13012): Latch Out_1[9]$latch has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Clock_in
+Warning (13012): Latch Out_1[10]$latch has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Clock_in
+Warning (13012): Latch Out_1[11]$latch has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Clock_in
+Warning (13012): Latch Out_1[12]$latch has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Clock_in
+Warning (13012): Latch Out_1[13]$latch has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Clock_in
+Warning (13012): Latch Out_1[14]$latch has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Clock_in
+Warning (13012): Latch Out_1[15]$latch has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Clock_in
+Warning (13012): Latch Out_1[16]$latch has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Clock_in
+Warning (13012): Latch Out_1[17]$latch has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Clock_in
+Warning (13012): Latch Out_1[18]$latch has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Clock_in
+Warning (13012): Latch Out_1[19]$latch has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Clock_in
+Warning (13012): Latch Out_1[20]$latch has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Clock_in
+Warning (13012): Latch Out_1[21]$latch has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Clock_in
+Warning (13012): Latch Out_1[22]$latch has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Clock_in
+Warning (13012): Latch Out_1[23]$latch has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Clock_in
+Warning (13012): Latch Out_1[24]$latch has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Clock_in
+Warning (13012): Latch Out_1[25]$latch has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Clock_in
+Warning (13012): Latch Out_1[26]$latch has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Clock_in
+Warning (13012): Latch Out_1[27]$latch has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Clock_in
+Warning (13012): Latch Out_1[28]$latch has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Clock_in
+Warning (13012): Latch Out_1[29]$latch has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Clock_in
+Warning (13012): Latch Out_1[30]$latch has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Clock_in
+Warning (13012): Latch Out_1[31]$latch has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Clock_in
+Warning (13012): Latch Out_2[0]$latch has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Clock_in
+Warning (13012): Latch Out_2[1]$latch has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Clock_in
+Warning (13012): Latch Out_2[2]$latch has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Clock_in
+Warning (13012): Latch Out_2[3]$latch has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Clock_in
+Warning (13012): Latch Out_2[4]$latch has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Clock_in
+Warning (13012): Latch Out_2[5]$latch has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Clock_in
+Warning (13012): Latch Out_2[6]$latch has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Clock_in
+Warning (13012): Latch Out_2[7]$latch has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Clock_in
+Warning (13012): Latch Out_2[8]$latch has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Clock_in
+Warning (13012): Latch Out_2[9]$latch has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Clock_in
+Warning (13012): Latch Out_2[10]$latch has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Clock_in
+Warning (13012): Latch Out_2[11]$latch has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Clock_in
+Warning (13012): Latch Out_2[12]$latch has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Clock_in
+Warning (13012): Latch Out_2[13]$latch has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Clock_in
+Warning (13012): Latch Out_2[14]$latch has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Clock_in
+Warning (13012): Latch Out_2[15]$latch has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Clock_in
+Warning (13012): Latch Out_2[16]$latch has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Clock_in
+Warning (13012): Latch Out_2[17]$latch has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Clock_in
+Warning (13012): Latch Out_2[18]$latch has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Clock_in
+Warning (13012): Latch Out_2[19]$latch has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Clock_in
+Warning (13012): Latch Out_2[20]$latch has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Clock_in
+Warning (13012): Latch Out_2[21]$latch has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Clock_in
+Warning (13012): Latch Out_2[22]$latch has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Clock_in
+Warning (13012): Latch Out_2[23]$latch has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Clock_in
+Warning (13012): Latch Out_2[24]$latch has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Clock_in
+Warning (13012): Latch Out_2[25]$latch has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Clock_in
+Warning (13012): Latch Out_2[26]$latch has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Clock_in
+Warning (13012): Latch Out_2[27]$latch has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Clock_in
+Warning (13012): Latch Out_2[28]$latch has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Clock_in
+Warning (13012): Latch Out_2[29]$latch has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Clock_in
+Warning (13012): Latch Out_2[30]$latch has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Clock_in
+Warning (13012): Latch Out_2[31]$latch has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Clock_in
+Warning (13012): Latch Data[10][0] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[9][0] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[8][0] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[11][0] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[5][0] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[6][0] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[4][0] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[7][0] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[2][0] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[1][0] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[0][0] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[3][0] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[13][0] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[14][0] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[12][0] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[15][0] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[6][1] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[10][1] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[2][1] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[14][1] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[9][1] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[5][1] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[1][1] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[13][1] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[4][1] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[8][1] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[0][1] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[12][1] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[11][1] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[7][1] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[3][1] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[15][1] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[6][2] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[5][2] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[4][2] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[7][2] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[9][2] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[10][2] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[8][2] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[11][2] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[1][2] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[2][2] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[0][2] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[3][2] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[14][2] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[13][2] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[12][2] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[15][2] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[5][3] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[9][3] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[1][3] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[13][3] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[10][3] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[6][3] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[2][3] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[14][3] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[8][3] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[4][3] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[0][3] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[12][3] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[7][3] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[11][3] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[3][3] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[15][3] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[10][4] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[9][4] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[8][4] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[11][4] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[5][4] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[6][4] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[4][4] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[7][4] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[2][4] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[1][4] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[0][4] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[3][4] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[13][4] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[14][4] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[12][4] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[15][4] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[6][5] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[10][5] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[2][5] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[14][5] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[9][5] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[5][5] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[1][5] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[13][5] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[4][5] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[8][5] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[0][5] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[12][5] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[11][5] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[7][5] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[3][5] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[15][5] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[6][6] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[5][6] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[4][6] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[7][6] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[9][6] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[10][6] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[8][6] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[11][6] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[1][6] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[2][6] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[0][6] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[3][6] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[14][6] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[13][6] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[12][6] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[15][6] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[5][7] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[9][7] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[1][7] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[13][7] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[10][7] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[6][7] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[2][7] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[14][7] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[8][7] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[4][7] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[0][7] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[12][7] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[7][7] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[11][7] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[3][7] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[15][7] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[10][8] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[9][8] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[8][8] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[11][8] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[5][8] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[6][8] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[4][8] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[7][8] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[2][8] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[1][8] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[0][8] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[3][8] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[13][8] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[14][8] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[12][8] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[15][8] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[6][9] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[10][9] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[2][9] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[14][9] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[9][9] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[5][9] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[1][9] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[13][9] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[4][9] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[8][9] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[0][9] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[12][9] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[11][9] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[7][9] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[3][9] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[15][9] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[6][10] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[5][10] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[4][10] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[7][10] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[9][10] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[10][10] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[8][10] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[11][10] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[1][10] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[2][10] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[0][10] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[3][10] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[14][10] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[13][10] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[12][10] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[15][10] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[5][11] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[9][11] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[1][11] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[13][11] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[10][11] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[6][11] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[2][11] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[14][11] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[8][11] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[4][11] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[0][11] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[12][11] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[7][11] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[11][11] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[3][11] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[15][11] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[10][12] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[9][12] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[8][12] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[11][12] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[5][12] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[6][12] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[4][12] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[7][12] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[2][12] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[1][12] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[0][12] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[3][12] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[13][12] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[14][12] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[12][12] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[15][12] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[6][13] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[10][13] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[2][13] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[14][13] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[9][13] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[5][13] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[1][13] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[13][13] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[4][13] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[8][13] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[0][13] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[12][13] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[11][13] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[7][13] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[3][13] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[15][13] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[6][14] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[5][14] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[4][14] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[7][14] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[9][14] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[10][14] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[8][14] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[11][14] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[1][14] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[2][14] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[0][14] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[3][14] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[14][14] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[13][14] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[12][14] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[15][14] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[5][15] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[9][15] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[1][15] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[13][15] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[10][15] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[6][15] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[2][15] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[14][15] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[8][15] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[4][15] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[0][15] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[12][15] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[7][15] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[11][15] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[3][15] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[15][15] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[10][16] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[9][16] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[8][16] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[11][16] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[5][16] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[6][16] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[4][16] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[7][16] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[2][16] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[1][16] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[0][16] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[3][16] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[13][16] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[14][16] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[12][16] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[15][16] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[6][17] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[10][17] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[2][17] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[14][17] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[9][17] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[5][17] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[1][17] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[13][17] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[4][17] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[8][17] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[0][17] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[12][17] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[11][17] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[7][17] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[3][17] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[15][17] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[6][18] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[5][18] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[4][18] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[7][18] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[9][18] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[10][18] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[8][18] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[11][18] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[1][18] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[2][18] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[0][18] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[3][18] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[14][18] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[13][18] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[12][18] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[15][18] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[5][19] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[9][19] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[1][19] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[13][19] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[10][19] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[6][19] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[2][19] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[14][19] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[8][19] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[4][19] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[0][19] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[12][19] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[7][19] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[11][19] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[3][19] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[15][19] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[10][20] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[9][20] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[8][20] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[11][20] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[5][20] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[6][20] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[4][20] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[7][20] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[2][20] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[1][20] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[0][20] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[3][20] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[13][20] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[14][20] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[12][20] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[15][20] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[6][21] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[10][21] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[2][21] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[14][21] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[9][21] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[5][21] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[1][21] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[13][21] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[4][21] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[8][21] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[0][21] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[12][21] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[11][21] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[7][21] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[3][21] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[15][21] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[6][22] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[5][22] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[4][22] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[7][22] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[9][22] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[10][22] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[8][22] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[11][22] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[1][22] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[2][22] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[0][22] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[3][22] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[14][22] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[13][22] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[12][22] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[15][22] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[5][23] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[9][23] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[1][23] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[13][23] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[10][23] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[6][23] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[2][23] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[14][23] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[8][23] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[4][23] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[0][23] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[12][23] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[7][23] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[11][23] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[3][23] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[15][23] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[10][24] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[9][24] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[8][24] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[11][24] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[5][24] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[6][24] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[4][24] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[7][24] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[2][24] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[1][24] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[0][24] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[3][24] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[13][24] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[14][24] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[12][24] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[15][24] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[6][25] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[10][25] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[2][25] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[14][25] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[9][25] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[5][25] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[1][25] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[13][25] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[4][25] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[8][25] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[0][25] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[12][25] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[11][25] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[7][25] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[3][25] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[15][25] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[6][26] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[5][26] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[4][26] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[7][26] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[9][26] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[10][26] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[8][26] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[11][26] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[1][26] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[2][26] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[0][26] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[3][26] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[14][26] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[13][26] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[12][26] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[15][26] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[5][27] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[9][27] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[1][27] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[13][27] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[10][27] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[6][27] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[2][27] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[14][27] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[8][27] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[4][27] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[0][27] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[12][27] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[7][27] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[11][27] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[3][27] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[15][27] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[10][28] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[9][28] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[8][28] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[11][28] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[5][28] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[6][28] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[4][28] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[7][28] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[2][28] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[1][28] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[0][28] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[3][28] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[13][28] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[14][28] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[12][28] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[15][28] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[6][29] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[10][29] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[2][29] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[14][29] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[9][29] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[5][29] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[1][29] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[13][29] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[4][29] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[8][29] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[0][29] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[12][29] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[11][29] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[7][29] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[3][29] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[15][29] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[6][30] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[5][30] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[4][30] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[7][30] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[9][30] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[10][30] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[8][30] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[11][30] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[1][30] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[2][30] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[0][30] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[3][30] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[14][30] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[13][30] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[12][30] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[15][30] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[5][31] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[9][31] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[1][31] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[13][31] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[10][31] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[6][31] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[2][31] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[14][31] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[8][31] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[4][31] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[0][31] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[12][31] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[7][31] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[11][31] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[3][31] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Warning (13012): Latch Data[15][31] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Signal_reset
+Info (286030): Timing-Driven Synthesis is running
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 1482 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 48 input pins
+    Info (21059): Implemented 64 output pins
+    Info (21061): Implemented 1370 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 1164 warnings
+    Info: Peak virtual memory: 498 megabytes
+    Info: Processing ended: Sat Mar 19 12:07:48 2016
+    Info: Elapsed time: 00:00:25
+    Info: Total CPU time (on all processors): 00:00:12
+
+

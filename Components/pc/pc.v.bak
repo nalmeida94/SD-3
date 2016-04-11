@@ -1,0 +1,11 @@
+module pc(In, Signal_write);
+
+Input In[31:0];
+
+output reg data[31:0];
+
+always @(edge Signal_write)
+	if(Signal_write == 1;) begin
+		assign data[31:0] = In[31:0];
+	end
+endmodule;

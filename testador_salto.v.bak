@@ -1,0 +1,34 @@
+module testador_salto(
+			Enable_FontePC,
+			Op,
+			Cond_to_jump,
+			Signal_Result,
+			Carry_out,
+			Overflow,
+			Zero
+			);
+
+/*
+Seletion_Sum_Sub
+					-> 1 = Subtração
+					-> 0 = Soma
+*/
+
+input wire Enable, Signal_A, Signal_B, Signal_Result, Seletion_Sum_Sub;
+wire or_Data;
+
+output wire Overflow, Zero;
+
+
+assign Overflow = (
+						~Signal_A & ~Signal_B & Signal_Result & ~Seletion_Sum_Sub |	
+						Signal_A & Signal_B & ~Signal_Result & ~Seletion_Sum_Sub | 
+						~Signal_A & Signal_B & Signal_Result & Seletion_Sum_Sub |
+						Signal_A & ~Signal_B & ~Signal_Result & Seletion_Sum_Sub
+						) & Enable;
+
+assign or_Data = |Data[31:0];					
+assign Zero = ~or_Data;
+
+
+endmodule

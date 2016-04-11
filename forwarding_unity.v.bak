@@ -1,0 +1,35 @@
+module forwarding_unity(
+	//CLOCK
+	input wire clock,
+	input wire reset,
+	input wire [3:0] B_R_Out_1,
+	input wire [3:0] B_R_Out_2,
+	output wire stall
+	);
+
+reg [3:0] A;
+reg [3:0] B;
+reg control;
+wire stall_A;
+wire stall_B;
+
+assign stall_A = |(A ^ B_R_Out_1);
+assign stall_B = |(B ^ B_R_Out_2);
+
+assign stall = (stall_A | stall_B) & control;
+
+always @( posedge clock ) begin
+	if(reset) begin
+		A <= 32'b0;
+		B <= 32'b0;
+		control <= 1'b0;
+	end
+	else begin
+		control <= 1'b1;
+		A <= B_R_Out_1;
+		B <= B_R_Out_2;
+	end
+end
+
+
+endmodule

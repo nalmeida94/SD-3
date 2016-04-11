@@ -1,0 +1,92 @@
+module unidade_de_controle (
+//Inputs
+Clock,
+Reset
+//Outputs
+) ;
+19
+20 // --- ---- ---- ----- ---- ---- ----- ---- ---- ----- ---- ---- ----- ---- ---- -----
+21 // State Encoding
+22 // --- ---- ---- ----- ---- ---- ----- ---- ---- ----- ---- ---- ----- ---- ---- -----
+23 localparam STATE_Initial = 3 ’ d0 ,
+24 STATE_1 = 3 ’ d1 ,
+25 STATE_2 = 3 ’ d2 ,
+26 STATE_3 = 3 ’ d3 ,
+27 STATE_4 = 3 ’ d4 ,
+28 STATE_5_PlaceHolder = 3 ’ d5 ,
+29 STATE_6_PlaceHolder = 3 ’ d6 ,
+30 STATE_7_PlaceHolder = 3 ’ d7 ;
+31 // --- ---- ---- ----- ---- ---- ----- ---- ---- ----- ---- ---- ----- ---- ---- -----
+32
+33 // --- ---- ---- ----- ---- ---- ----- ---- ---- ----- ---- ---- ----- ---- ---- -----
+34 // State reg Declarations
+35 // --- ---- ---- ----- ---- ---- ----- ---- ---- ----- ---- ---- ----- ---- ---- -----
+36 reg [2:0] CurrentState ;
+37 reg [2:0] NextState ;
+38 // --- ---- ---- ----- ---- ---- ----- ---- ---- ----- ---- ---- ----- ---- ---- -----
+39
+40 // --- ---- ---- ----- ---- ---- ----- ---- ---- ----- ---- ---- ----- ---- ---- -----
+41 // Outputs
+42 // --- ---- ---- ----- ---- ---- ----- ---- ---- ----- ---- ---- ----- ---- ---- -----
+43 // 1 -bit outputs
+44 assign Output1 = ( CurrentState == STATE_1 ) | ( CurrentState == STATE_2 ) ;
+45 assign Output2 = ( CurrentState == STATE_2 ) ;
+46
+47 // multi -bit outputs
+48 always@ ( * ) begin
+49 Status = 3 ’ b000 ;
+50 case ( CurrentState )
+51 STATE_2 : begin
+52 Status = 3 ’ b010 ;
+53 end
+54 STATE_3 : begin
+55 Status = 3 ’ b011 ;
+56 end
+57 endcase
+58 end
+59 // --- ---- ---- ----- ---- ---- ----- ---- ---- ----- ---- ---- ----- ---- ---- -----
+15
+Program 24 The complete FSM (part 2) from Figure 1
+1 // --- ---- ---- ----- ---- ---- ----- ---- ---- ----- ---- ---- ----- ---- ---- -----
+2 // Synchronous State - Transition always@ ( posedge Clock ) block
+3 // --- ---- ---- ----- ---- ---- ----- ---- ---- ----- ---- ---- ----- ---- ---- -----
+4 always@ ( posedge Clock ) begin
+5 if ( Reset ) CurrentState <= STATE_Initial ;
+6 else CurrentState <= NextState ;
+7 end
+8 // --- ---- ---- ----- ---- ---- ----- ---- ---- ----- ---- ---- ----- ---- ---- -----
+9
+10 // --- ---- ---- ----- ---- ---- ----- ---- ---- ----- ---- ---- ----- ---- ---- -----
+11 // Conditional State - Transition always@ ( * ) block
+12 // --- ---- ---- ----- ---- ---- ----- ---- ---- ----- ---- ---- ----- ---- ---- -----
+13 always@ ( * ) begin
+14 NextState = CurrentState ;
+15 case ( CurrentState )
+16 STATE_Initial : begin
+17 NextState = STATE_1 ;
+18 end
+19 STATE_1 : begin
+20 if ( A & B ) NextState = STATE_2 ;
+21 end
+22 STATE_2 : begin
+23 if ( A ) NextState = STATE_3 ;
+24 end
+25 STATE_3 : begin
+26 if (! A & B ) NextState = STATE_Initial ;
+27 else if ( A & ! B ) NextState = STATE_4 ;
+28 end
+29 STATE_4 : begin
+30 end
+31 STATE_5_PlaceHolder : begin
+32 NextState = STATE_Initial ;
+33 end
+STATE_6_PlaceHolder : begin
+NextState = STATE_Initial ;
+end
+STATE_7_PlaceHolder : begin
+NextState = STATE_Initial ;
+end
+endcase
+end
+
+endmodule

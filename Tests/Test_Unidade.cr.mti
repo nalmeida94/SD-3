@@ -1,0 +1,71 @@
+D:/Workspaces/Github/PBL-SD-2/Components/extensor_de_sinal/extensor_de_sinal.v {1 {vlog -work work D:/Workspaces/Github/PBL-SD-2/Components/extensor_de_sinal/extensor_de_sinal.v
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module extensor_de_sinal
+
+Top level modules:
+	extensor_de_sinal
+
+} {} {}} D:/Workspaces/Github/PBL-SD-2/Components/detector_de_flags/detector_de_flags.v {1 {vlog -work work D:/Workspaces/Github/PBL-SD-2/Components/detector_de_flags/detector_de_flags.v
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module detector_de_flags
+
+Top level modules:
+	detector_de_flags
+
+} {} {}} D:/Workspaces/Github/PBL-SD-2/Components/banco_de_registradores/banco_de_registradores.v {1 {vlog -work work D:/Workspaces/Github/PBL-SD-2/Components/banco_de_registradores/banco_de_registradores.v
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module banco_de_registradores
+
+Top level modules:
+	banco_de_registradores
+
+} {} {}} D:/Workspaces/Github/PBL-SD-2/Components/extensor_de_sinal/TB_extensor_de_sinal.v {1 {vlog -work work D:/Workspaces/Github/PBL-SD-2/Components/extensor_de_sinal/TB_extensor_de_sinal.v
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module TB_extensor_de_sinal
+
+Top level modules:
+	TB_extensor_de_sinal
+
+} {} {}} D:/Workspaces/Github/PBL-SD-2/Components/detector_de_flags/TB_detector_de_flags.v {1 {vlog -work work D:/Workspaces/Github/PBL-SD-2/Components/detector_de_flags/TB_detector_de_flags.v
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module TB_detector_de_flags
+
+Top level modules:
+	TB_detector_de_flags
+
+} {} {}} D:/Workspaces/Github/PBL-SD-2/Components/banco_de_registradores/TB_banco_de_registradores.v {1 {vlog -work work D:/Workspaces/Github/PBL-SD-2/Components/banco_de_registradores/TB_banco_de_registradores.v
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module TB_banco_de_registradores
+
+Top level modules:
+	TB_banco_de_registradores
+
+} {} {}} D:/Workspaces/Github/PBL-SD-2/Components/pc/pc.v {1 {vlog -work work {D:\Workspaces\Github\PBL-SD-2\Components\pc\pc.v}
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module pc
+
+Top level modules:
+	pc
+
+} {} {}} D:/Workspaces/Github/PBL-SD-2/Components/ula_32_bits/ula_32_bits.v {1 {vlog -work work D:/Workspaces/Github/PBL-SD-2/Components/ula_32_bits/ula_32_bits.v
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module ula_32_bits
+
+Top level modules:
+	ula_32_bits
+
+} {} {}} D:/Workspaces/Github/PBL-SD-2/Components/ula_32_bits/TB_ula_32_bits.v {1 {vlog -work work D:/Workspaces/Github/PBL-SD-2/Components/ula_32_bits/TB_ula_32_bits.v
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module TB_ula_32_bits
+
+Top level modules:
+	TB_ula_32_bits
+
+} {} {}} D:/Workspaces/Github/PBL-SD-2/Components/pc/TB_pc.v {1 {vlog -work work D:/Workspaces/Github/PBL-SD-2/Components/pc/TB_pc.v
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module TB_pc
+
+Top level modules:
+	TB_pc
+
+} {} {}}

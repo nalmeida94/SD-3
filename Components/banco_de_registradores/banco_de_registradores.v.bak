@@ -1,0 +1,30 @@
+module banco_de_registradores(
+			In,
+			Signal_write,
+			Signal_reset,
+			Clock_in,
+			Data
+			);
+
+input wire [31:0] In;
+input wire Signal_write;
+input wire Signal_reset;
+input wire Clock_in;
+output reg [31:0] Data;
+
+always @( posedge Clock_in ) begin
+//always @( posedge Clock_in ) begin
+	//Reset the PC Counter
+	if (Signal_reset) begin
+		Data[31:0] <= 32'd0;
+	end
+	else begin 
+		//Puting a new address on the pc
+		if(Signal_write) begin
+			Data[31:0] <= In[31:0];
+		end
+	end
+end	
+
+
+endmodule

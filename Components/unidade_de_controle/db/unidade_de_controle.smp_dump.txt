@@ -1,0 +1,9 @@
+
+State Machine - |unidade_de_controle|State
+Name State.STATE_5_WB State.STATE_4_MEM State.STATE_3_EXE State.STATE_2_ID State.STATE_1_IF State.STATE_Initial_Reset 
+State.STATE_Initial_Reset 0 0 0 0 0 0 
+State.STATE_1_IF 0 0 0 0 1 1 
+State.STATE_2_ID 0 0 0 1 0 1 
+State.STATE_3_EXE 0 0 1 0 0 1 
+State.STATE_4_MEM 0 1 0 0 0 1 
+State.STATE_5_WB 1 0 0 0 0 1 

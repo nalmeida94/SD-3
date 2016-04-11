@@ -1,0 +1,69 @@
+module PBL_2(
+			Clock_in
+			);
+
+input wire Clock_in;	
+
+//ULA
+wire [31:0] ULA_IN_A, ULA_IN_B, ULA_OUT;
+wire [4:0] ULA_Selection;
+wire ULA_FLAG_Zero, ULA_FLAG_Carry_out, ULA_FLAG_Signal, ULA_FLAG_Overflow, ULA_Enable, ULA_OUT_Ready;
+
+//PC
+wire [31:0] PC_OUT, PC_IN;
+wire PC_Signal_write, PC_Signal_reset, PC_Clock_in;
+
+//EXTENSOR DE SINAL
+wire [15:0] EXTENSOR_DE_SINAL_IN;
+wire [31:0] EXTENSOR_DE_SINAL_OUT;
+
+//BANCO DE REGISTRADORES
+wire [31:0] B_R_Data_to_write;
+wire [3:0] B_R_Read_1, B_R_Read_2, B_R_Address_to_write;
+wire B_R_Signal_write, B_R_Signal_read, B_R_Signal_reset, B_R_Clock_in;
+wire [31:0] B_R_Out_1, B_R_Out_2;
+
+//MEMÓRIA DE INSTRUÇÃO
+
+
+//MEMÓRIA DE DADOS
+
+
+//UNIDADE DE CONTROLE
+
+
+
+//Instância da ULA
+ula_32_bits ULA ( ULA_Selection, ULA_Enable, ULA_IN_A, ULA_IN_B,ULA_OUT, ULA_FLAG_Signal,
+			ULA_FLAG_Overflow, ULA_FLAG_Carry_out,ULA_FLAG_Zero, ULA_OUT_Ready);
+
+//Instância do PC
+pc PC (PC_IN, PC_Signal_write, PC_Signal_reset,	PC_Clock_in, PC_OUT);
+
+//Instância do EXTENSOR DE SINAL
+extensor_de_sinal EXTENSOR_DE_SINAL (EXTENSOR_DE_SINAL_IN, EXTENSOR_DE_SINAL_OUT);
+
+//Instância do BANCO_DE_REGISTRADORES
+banco_de_registradores BANCO_DE_REGISTRADORES( B_R_Read_1, B_R_Read_2, B_R_Data_to_write,
+			B_R_Address_to_write, B_R_Signal_write, B_R_Signal_read,	B_R_Signal_reset,
+			B_R_Clock_in,	B_R_Out_1, B_R_Out_2);
+
+//Instância da MEMORIA_DE_INSTRUCAO
+
+
+
+//Instância da MEMORIA_DE_DADOS
+
+
+
+//Instância da UNIDADE_DE_CONTROLE
+
+
+
+
+always @( * ) begin
+
+end	
+
+
+endmodule

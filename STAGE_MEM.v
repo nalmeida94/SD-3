@@ -1,0 +1,35 @@
+module STAGE_MEM(
+input wire Clock_in,
+
+//BANCO DE REGISTRADORES
+input wire [31:0] B_R_Out_1,
+input wire [31:0] B_R_Out_2,
+//PC
+input wire[31:0] PC_NEXT_INS_IN,
+output wire[31:0] PC_NEXT_INS_OUT,
+//MEMÓRIA DE DADOS
+
+input wire MEM_DATA_WE,
+
+output wire [31:0] MEM_DATA_OUT
+	);
+
+wire MEM_DATA_read_file, MEM_DATA_write_file, MEM_DATA_CLK;
+wire [9:0] MEM_DATA_ADDRESS;
+wire [31:0] MEM_DATA_Q;
+wire [31:0] MEM_DATA_DATA;
+
+//Instância da MEMORIA_DE_DADOS
+memoria_dado MEMORIA_DE_DADOS(MEM_DATA_read_file, MEM_DATA_write_file, MEM_DATA_WE,
+			MEM_DATA_CLK, MEM_DATA_ADDRESS, MEM_DATA_DATA, MEM_DATA_Q);
+
+
+assign PC_NEXT_INS_OUT = PC_NEXT_INS_IN;
+assign MEM_DATA_ADDRESS = B_R_Out_1;
+assign MEM_DATA_DATA = B_R_Out_2;
+assign MEM_DATA_OUT = MEM_DATA_Q;
+
+	
+
+
+endmodule
